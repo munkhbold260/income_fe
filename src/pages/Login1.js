@@ -8,21 +8,21 @@ const LogIn1 = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
-  const [passwordError, setPasswordrror] = useState(false);
-  const [logins, setLogins] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
+  // const [logins, setLogins] = useState("");
 
   const router = useRouter();
   const handleLogIn = (e) => {
     e.preventDefault();
 
-    setPasswordrror(false);
+    setPasswordError(false);
     setEmailError(false);
 
     if (email == "") {
       setEmailError(true);
     }
     if (password == "") {
-      setPasswordrror(true);
+      setPasswordError(true);
     }
     // return;
     if (emailError == false && passwordError == false) {
@@ -70,7 +70,10 @@ const LogIn1 = () => {
                 error={passwordError}
               />
               <button
-                onClick={(handleLogIn, () => router.push(logins))}
+                onClick={
+                  handleLogIn
+                  // , () => router.push("/loginss")
+                }
                 className="w-96 h-12 bg-blue-600 rounded-[20px] justify-center items-center text-white text-xl"
               >
                 Log in

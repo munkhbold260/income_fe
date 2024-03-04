@@ -1,4 +1,4 @@
-import Step1 from "@/components/Step1";
+import Step1 from "@/components/signUp/Step1";
 import LogoCurrency from "@/components/logos/LogoCurrency";
 
 export default function Stepper1() {

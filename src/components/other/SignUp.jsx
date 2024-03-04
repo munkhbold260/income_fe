@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { Logo } from "../icons";
+// import { Logo } from "../icons";
 
 export const SignUp = ({ showLoader, setShowLoader }) => {
   const router = useRouter();
@@ -7,12 +7,12 @@ export const SignUp = ({ showLoader, setShowLoader }) => {
     <div className="w-full flex flex-row">
       <div class="w-1/2 p-6 m-auto bg-white lg:max-w-md flex flex-col gap-10 mt-[278px]">
         <div className="flex flex-row justify-center">
-          <Logo />
+          {/* <Logo /> */}
           <h1 class="text-3xl font-semibold text-center text-gray-700">Geld</h1>
         </div>
         <div className="flex flex-col items-center gap-3">
           <h1 class="text-3xl font-semibold text-center text-gray-700">
-            Create Gel account{" "}
+            Create Geld account
           </h1>
           <p>Sign up below to create your Wallet account</p>
         </div>

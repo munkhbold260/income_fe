@@ -1,5 +1,5 @@
-import GeldSmall from "./logos/GeldSmall";
-import LogoCurrency from "./logos/LogoCurrency";
+import GeldSmall from "../logos/GeldSmall";
+import LogoCurrency from "../logos/LogoCurrency";
 
 export default function Step1() {
   return (

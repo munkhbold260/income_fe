@@ -1,8 +1,4 @@
-// import SignUpp from "@/components/SignUpp";
-
-import Layout from "@/components/Layout";
-
-import SignUpp from "@/components/SignUpp";
+import SignUpp from "../components/signUp/SignUpp";
 
 export default function signUp() {
   return (

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import GeldSmall from "@/components/logos/GeldSmall";
 import { TextField } from "@mui/material";
 
-export default function SignUpp() {
+export default function Field() {
   const router = useRouter();
 
   const [name, setName] = useState("");
@@ -11,10 +11,31 @@ export default function SignUpp() {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
 
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [rePasswordError, setRePasswordError] = useState(false);
+
   const handleSignUp = (e) => {
     e.preventDefault();
+
+    setNameError(false);
+    setEmailError(false);
+    setPasswordError(false);
+    setRePasswordError(false);
+
     if (name && email && password === rePassword) {
       console.log("signUp button working &", name, email, password, rePassword);
+    }
+    if (name == "") {
+      setNameError(true);
+    }
+    if (email == "") {
+      setEmailError(true);
+    }
+    if (password != rePassword) {
+      setPasswordError(true);
+      setRePasswordError(true);
     }
   };
 
@@ -46,6 +67,7 @@ export default function SignUpp() {
                 label="Name"
                 variant="outlined"
                 fullWidth
+                error={nameError}
               />
 
               <TextField
@@ -56,6 +78,7 @@ export default function SignUpp() {
                 label="Email"
                 variant="outlined"
                 fullWidth
+                error={emailError}
               />
               <TextField
                 onChange={(e) => {
@@ -65,6 +88,7 @@ export default function SignUpp() {
                 label="Password"
                 variant="outlined"
                 fullWidth
+                error={passwordError}
               />
               <TextField
                 onChange={(e) => {
@@ -74,6 +98,7 @@ export default function SignUpp() {
                 label="Re-Password"
                 variant="outlined"
                 fullWidth
+                error={rePasswordError}
               />
               <button
                 onClick={handleSignUp}
