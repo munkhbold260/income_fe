@@ -1,3 +1,3 @@
 export default function Goal() {
-  return <div>Goal</div>;
+  return <div>Goadscsdckhsoiufyero8cyew8cyhwe87tycwh9t87wh98l</div>;
 }
