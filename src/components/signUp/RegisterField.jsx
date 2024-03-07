@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import GeldSmall from "@/components/logos/GeldSmall";
 import { TextField } from "@mui/material";
 import { nanoid } from "nanoid";
+import { v4 as uuidv4 } from "uuid";
 
 export default function RegisterField() {
-  const add_url = "http://localhost:4000/user-add";
+  const add_url = "http://localhost:4000/signup";
 
   const router = useRouter();
 
@@ -60,21 +61,22 @@ export default function RegisterField() {
   };
 
   async function handleSubmit(e) {
+    const newId = uuidv4();
     // e.preventDefault();
-    const newId = nanoid();
+    // const newId = nanoid();
     const data = {
       name: name,
       id: newId,
       email: email,
       password: password,
     };
-
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     };
     console.log("data", data);
+    console.log("uuid", newId);
     const fetched_data = await fetch(add_url, options);
     const fetched_json = await fetched_data.json();
 

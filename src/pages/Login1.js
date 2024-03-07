@@ -5,6 +5,8 @@ import GeldSmall from "@/components/logos/GeldSmall";
 import { TextField } from "@mui/material";
 
 const LogIn1 = () => {
+  const signin_url = "http://localhost:4000/signin";
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
@@ -26,8 +28,30 @@ const LogIn1 = () => {
     }
 
     if (emailError == false && passwordError == false) {
+      handleSubmit();
       // setLogins("/dashboard");
       console.log(email, password);
+    }
+    async function handleSubmit(e) {
+      const data = {
+        email: email,
+        password: password,
+      };
+      const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      };
+      console.log("data", data);
+      const fetched_data = await fetch(signin_url, options);
+      const fetched_json = await fetched_data.json();
+
+      if (fetched_json.success == "true") {
+        router.push("/loading");
+        router.push("/dashboard");
+      } else {
+        alert("wrong password or email");
+      }
     }
   };
 
