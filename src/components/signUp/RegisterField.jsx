@@ -37,7 +37,7 @@ export default function RegisterField() {
         "password:",
         password,
         rePassword,
-        "naaaaaaaaaaaaaameeeeeeeeee",
+        "name",
         name
       );
       handleSubmit();
@@ -67,7 +67,6 @@ export default function RegisterField() {
       id: newId,
       email: email,
       password: password,
-      age: 100,
     };
 
     const options = {
@@ -79,10 +78,10 @@ export default function RegisterField() {
     const fetched_data = await fetch(add_url, options);
     const fetched_json = await fetched_data.json();
 
-    // setList(fetched_json.users);
-
-    // console.log("feeeetched json", fetched_json.users);
-    // console.log("liiiiiiiiiist", list);
+    if (fetched_json == true) {
+      // router.push("/dashboard");
+      console.log(fetched_json);
+    }
   }
 
   return (
