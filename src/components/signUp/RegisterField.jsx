@@ -2,8 +2,11 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import GeldSmall from "@/components/logos/GeldSmall";
 import { TextField } from "@mui/material";
+import { nanoid } from "nanoid";
 
-export default function Field() {
+export default function RegisterField() {
+  const add_url = "http://localhost:4000/user-add";
+
   const router = useRouter();
 
   const [name, setName] = useState("");
@@ -25,7 +28,19 @@ export default function Field() {
     setRePasswordError(false);
 
     if (name && email && password === rePassword) {
-      console.log("signUp button working &", name, email, password, rePassword);
+      console.log(
+        "signUp button working &",
+        "name:",
+        name,
+        "email:",
+        email,
+        "password:",
+        password,
+        rePassword,
+        "naaaaaaaaaaaaaameeeeeeeeee",
+        name
+      );
+      handleSubmit();
     }
     if (name == "") {
       setNameError(true);
@@ -33,11 +48,42 @@ export default function Field() {
     if (email == "") {
       setEmailError(true);
     }
+    if (password == "" && rePassword == "") {
+      setPasswordError(true);
+      setRePasswordError(true);
+    }
+
     if (password != rePassword) {
       setPasswordError(true);
       setRePasswordError(true);
     }
   };
+
+  async function handleSubmit(e) {
+    // e.preventDefault();
+    const newId = nanoid();
+    const data = {
+      name: name,
+      id: newId,
+      email: email,
+      password: password,
+      age: 100,
+    };
+
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    };
+    console.log("data", data);
+    const fetched_data = await fetch(add_url, options);
+    const fetched_json = await fetched_data.json();
+
+    // setList(fetched_json.users);
+
+    // console.log("feeeetched json", fetched_json.users);
+    // console.log("liiiiiiiiiist", list);
+  }
 
   return (
     <div className="w-full ">
@@ -63,6 +109,7 @@ export default function Field() {
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
+                id="name"
                 type="name"
                 label="Name"
                 variant="outlined"
@@ -74,6 +121,7 @@ export default function Field() {
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
+                id="email"
                 type="email"
                 label="Email"
                 variant="outlined"
@@ -84,6 +132,7 @@ export default function Field() {
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
+                id="password"
                 type="password"
                 label="Password"
                 variant="outlined"

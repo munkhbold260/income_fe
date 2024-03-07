@@ -24,9 +24,9 @@ const LogIn1 = () => {
     if (password == "") {
       setPasswordError(true);
     }
-    // return;
+
     if (emailError == false && passwordError == false) {
-      setLogins("/signup");
+      // setLogins("/dashboard");
       console.log(email, password);
     }
   };
@@ -70,10 +70,8 @@ const LogIn1 = () => {
                 error={passwordError}
               />
               <button
-                onClick={
-                  handleLogIn
-                  // , () => router.push("/loginss")
-                }
+                onClick={handleLogIn}
+                // , () => router.push("/dashboard"))}
                 className="w-96 h-12 bg-blue-600 rounded-[20px] justify-center items-center text-white text-xl"
               >
                 Log in
