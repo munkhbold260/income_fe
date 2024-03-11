@@ -81,7 +81,7 @@ export default function RegisterField() {
     const fetched_json = await fetched_data.json();
 
     if (fetched_json == true) {
-      // router.push("/dashboard");
+      router.push("/dashboard");
       console.log(fetched_json);
     }
   }

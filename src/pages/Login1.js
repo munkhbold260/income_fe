@@ -47,7 +47,7 @@ const LogIn1 = () => {
       const fetched_json = await fetched_data.json();
 
       if (fetched_json.success == "true") {
-        router.push("/loading");
+        // router.push("/loading");
         router.push("/dashboard");
       } else {
         alert("wrong password or email");
