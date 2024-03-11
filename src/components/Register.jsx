@@ -2,10 +2,9 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import GeldSmall from "@/components/logos/GeldSmall";
 import { TextField } from "@mui/material";
-import { nanoid } from "nanoid";
 import { v4 as uuidv4 } from "uuid";
 
-export default function RegisterField() {
+export default function Register() {
   const add_url = "http://localhost:4000/signup";
 
   const router = useRouter();
@@ -81,7 +80,7 @@ export default function RegisterField() {
     const fetched_json = await fetched_data.json();
 
     if (fetched_json == true) {
-      router.push("/dashboard");
+      router.push("/signup/stepone");
       console.log(fetched_json);
     }
   }
@@ -157,15 +156,6 @@ export default function RegisterField() {
                 Sign up
               </button>
             </form>
-
-            <div className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
-              <button
-                onClick={() => router.push("/dashboard")}
-                className="text-white text-xl font-normal   leading-7"
-              >
-                Go To Dashboard
-              </button>
-            </div>
           </div>
           <div className="justify-start items-baseline inline-flex">
             <div className="text-slate-900 text-base font-normal   leading-normal">

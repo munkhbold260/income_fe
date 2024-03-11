@@ -1,10 +1,5 @@
-// import Layout from "../components/layout";
-import LogIn1 from "./Login1";
+import LogIn from "@/components/Login";
 
 export default function Home() {
-  return <LogIn1 />;
+  return <LogIn />;
 }
-
-// Home.getLayout = function getLayout(page) {
-//   return <Layout>{page}</Layout>;
-// };

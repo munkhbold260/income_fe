@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import GeldSmall from "@/components/logos/GeldSmall";
 import { TextField } from "@mui/material";
 
-const LogIn1 = () => {
+const LogIn = () => {
   const signin_url = "http://localhost:4000/signin";
 
   const [email, setEmail] = useState("");
@@ -95,7 +95,6 @@ const LogIn1 = () => {
               />
               <button
                 onClick={handleLogIn}
-                // , () => router.push("/dashboard"))}
                 className="w-96 h-12 bg-blue-600 rounded-[20px] justify-center items-center text-white text-xl"
               >
                 Log in
@@ -120,4 +119,4 @@ const LogIn1 = () => {
   );
 };
 
-export default LogIn1;
+export default LogIn;
