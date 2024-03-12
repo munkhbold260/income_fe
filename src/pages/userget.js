@@ -51,6 +51,7 @@ export default function Home() {
                 <p></p>
                 <p className="bg-blue-200">name: {a.name}</p>
                 <p> {a.id}</p>
+                <p>{a.email}</p>
                 <form onSubmit={handleDelete} className="flex gap-5">
                   {/* <input
                     className="bg-blue-200"

@@ -74,14 +74,16 @@ export default function Register() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     };
-    console.log("data", data);
-    console.log("uuid", newId);
+    // console.log("data", data);
+    // console.log("uuid", newId);
     const fetched_data = await fetch(add_url, options);
     const fetched_json = await fetched_data.json();
 
-    if (fetched_json == true) {
+    if (fetched_json.success == "true") {
       router.push("/signup/stepone");
-      console.log(fetched_json);
+      console.log("1234567890", fetched_json);
+    } else {
+      alert("already email");
     }
   }
 
@@ -101,7 +103,7 @@ export default function Register() {
           </div>
           <div className="flex-col justify-start items-start gap-4 flex">
             <form
-              // autoComplete="off"
+              autoComplete="on"
               onSubmit={handleSignUp}
               className="flex-col w-96 justify-start items-start gap-4 flex"
             >
