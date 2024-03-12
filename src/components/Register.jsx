@@ -167,7 +167,7 @@ export default function Register() {
               onClick={() => router.push("/")}
               className="w-[68px] px-3 rounded-[20px] justify-center items-center gap-1 flex"
             >
-              <div className="text-blue-600 text-base font-normal   leading-normal">
+              <div className="text-blue-600 text-base font-normal leading-normal">
                 Log in
               </div>
             </button>

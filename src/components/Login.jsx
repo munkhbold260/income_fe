@@ -46,12 +46,22 @@ const LogIn = () => {
       const fetched_data = await fetch(signin_url, options);
       const fetched_json = await fetched_data.json();
 
-      if (fetched_json.success == "true") {
+      console.log("fetched_json", fetched_json.name);
+
+      if ((fetched_json.status = 200)) {
         // router.push("/loading");
         router.push("/dashboard");
       } else {
         alert("wrong password or email");
       }
+
+      localStorage.setItem("user", fetched_json.id);
+      // if (typeof(Storage) !== "undefined") {
+      //   if (localStorage.clickcount) {
+      //     localStorage.clickcount = Number(localStorage.clickcount)+1;
+      //   } else {
+      //     localStorage.clickcount = 1;
+      //   }
     }
   };
 
@@ -77,6 +87,7 @@ const LogIn = () => {
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
+                autoComplete="on"
                 type="email"
                 label="Email"
                 variant="outlined"
@@ -107,7 +118,7 @@ const LogIn = () => {
             </div>
             <button
               onClick={() => router.push("/signup")}
-              className="w-[77px] px-3 rounded-[20px] justify-center items-center gap-1 flex text-blue-600 text-base font-normal   leading-normal"
+              className="w-[77px]  rounded-[20px] justify-center items-center  text-blue-600 "
             >
               Sign up
             </button>
