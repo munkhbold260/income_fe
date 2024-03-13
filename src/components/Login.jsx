@@ -55,7 +55,7 @@ const LogIn = () => {
         alert("wrong password or email");
       }
 
-      localStorage.setItem("user", fetched_json.id);
+      localStorage.setItem("userId", fetched_json.id);
       // if (typeof(Storage) !== "undefined") {
       //   if (localStorage.clickcount) {
       //     localStorage.clickcount = Number(localStorage.clickcount)+1;

@@ -4,6 +4,9 @@ import Card from "@/components/Card";
 import Goal from "@/components/Goal";
 
 export default function Dashboard() {
+  var x = localStorage.getItem("user");
+  // localStorage.clear();
+  console.log(x);
   return (
     <div className="flex flex-col gap-8 bg-gray-300 pt-8 items-center">
       <Card />

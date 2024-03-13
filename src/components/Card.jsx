@@ -33,8 +33,8 @@ export default function Card() {
             <div className="justify-start items-center gap-2 inline-flex">
               <div className="w-6 h-6 relative" />
               <svg
-                width="24"
-                height="24"
+                width={24}
+                height={24}
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
