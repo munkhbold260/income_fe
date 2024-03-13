@@ -14,9 +14,8 @@ export default function Home() {
 
     const fetched_data = await fetch(get_url);
     const fetched_json = await fetched_data.json();
-    // console.log(fetched_json.message);
-    const userlist = fetched_json.message;
-    console.log(userlist);
+    const userlist = fetched_json;
+    console.log("userlist", userlist);
     setUsers(userlist);
   }
 
