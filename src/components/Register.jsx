@@ -79,7 +79,7 @@ export default function Register() {
     const fetched_data = await fetch(add_url, options);
     const fetched_json = await fetched_data.json();
 
-    if (fetched_json.success == "true") {
+    if (fetched_json == true) {
       router.push("/signup/stepone");
       console.log("1234567890", fetched_json);
     } else {

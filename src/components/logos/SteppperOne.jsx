@@ -6,7 +6,6 @@ export default function StepperOne() {
       viewBox="0 0 240 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
     >
       <circle cx={221} cy={12} r={12} fill="#E5E7EB" />
       <path

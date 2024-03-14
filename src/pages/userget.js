@@ -33,6 +33,11 @@ export default function Home() {
 
     const fetched_data = await fetch(del_url, options);
     const fetched_json = await fetched_data.json();
+    console.log("getchjson ", fetched_json.message);
+    if (fetched_json.message) {
+      const newData = users.filter((data) => data.id != e.target.qwer.value);
+      setUsers(newData);
+    }
   }
 
   return (
