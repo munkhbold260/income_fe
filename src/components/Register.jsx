@@ -62,7 +62,7 @@ export default function Register() {
   async function handleSubmit(e) {
     const newId = uuidv4();
     // e.preventDefault();
-    // const newId = nanoid();
+
     const data = {
       name: name,
       id: newId,
@@ -74,19 +74,17 @@ export default function Register() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     };
-    // console.log("data", data);
-    // console.log("uuid", newId);
     const fetched_data = await fetch(add_url, options);
     const fetched_json = await fetched_data.json();
 
     if (fetched_json == true) {
       router.push("/signup/stepone");
+
       console.log("1234567890", fetched_json);
     } else {
       alert("already email");
     }
   }
-
   return (
     <div className="w-full ">
       <div className=" m-auto w-[1440px] h-[1024px] pl-[222px] bg-white items-center gap-[126px] flex ">

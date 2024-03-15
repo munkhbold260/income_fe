@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
@@ -23,27 +24,30 @@ const Header = () => {
               />
             </svg>
           </div>
-          <button
-            onClick={
-              () => router.push("/dashboard")
-              // () => {
-              //   setDash("Dashboard");
-              // }
-            }
-            className={`text-center  text-base font-semibold  leading-normal ${
-              dash == "Dashboard" ? "text - slate" - 900 : "text-gray-500"
-            }`}
-          >
-            Dashboard
-          </button>
-          <button
-            onClick={() => router.push("/records")}
-            className={`text-center text-slate-900 text-base font-normal  leading-normal ${
-              dash == "Records" ? "text - slate" - 900 : "text-gray-500"
-            } `}
-          >
-            Records
-          </button>
+          <Link href={"/dashboard"}>
+            <button
+              onClick={() => {
+                setDash("Dashboard");
+              }}
+              className={`text-center  text-base font-semibold  leading-normal ${
+                dash == "Dashboard" ? "text - slate" - 900 : "text-gray-500 "
+              }`}
+            >
+              Dashboard
+            </button>
+          </Link>
+          <Link href={"/records"}>
+            <button
+              onClick={() => {
+                setDash("Records");
+              }}
+              className={`text-center  text-base font-semibold  leading-normal ${
+                dash == "Records" ? "text - slate" - 900 : "text-gray-500"
+              }`}
+            >
+              Records
+            </button>
+          </Link>
         </div>
         <div className="justify-start items-center gap-6 flex">
           <div className="w-[99px] px-3 bg-blue-600 rounded-[20px] justify-center items-center gap-1 flex">

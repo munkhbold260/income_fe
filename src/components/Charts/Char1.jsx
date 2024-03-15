@@ -1,7 +1,7 @@
 import React from "react";
-import { BarChart } from "@mui/x-charts/BarChart";
+// import { BarChart } from "@mui/x-charts/BarChart";
 
-export default function Char2() {
+export default function Char1() {
   return (
     <div className="w-[588px] h-[284px] rounded-[18px] bg-white">
       <div class=" px-6 py-4 border-b border-slate-200 flex justify-between items-center ">
@@ -13,7 +13,7 @@ export default function Char2() {
         </div>
       </div>
       <div class="w-[588px] h-[228px] flex gap-y-48 rounded-b-[18px] px-8 py-6">
-        <BarChart
+        {/* <BarChart
           series={[
             { data: [55, 55, 55, 55, 55, 55, 55] },
             { data: [66, 66, 66, 66, 66, 66, 66] },
@@ -26,7 +26,8 @@ export default function Char2() {
             },
           ]}
           margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
-        />
+        /> */}
+        barchart
       </div>
     </div>
   );
