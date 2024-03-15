@@ -4,6 +4,7 @@ import React, { useState } from "react";
 const Header = () => {
   const router = useRouter();
   const [dash, setDash] = useState("Dashboard");
+  console.log("route");
   return (
     <div className="w-full flex ">
       <div className="w-[1440px] m-auto h-[72px] px-[120px] py-4 bg-white justify-between items-center inline-flex">
